@@ -8,11 +8,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import {useColorMode, Button} from "@chakra-ui/core"
 
 import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+    const {colorMode, toggleColorMode} = useColorMode();
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -33,6 +35,9 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
+          <Button onClick={toggleColorMode}>
+              Toggle {colorMode === 'Light' ? 'Dark' : 'Light'}
+          </Button>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
