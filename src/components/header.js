@@ -1,35 +1,22 @@
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import {useColorMode, Text} from "@chakra-ui/core"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+const Header = ({ siteTitle }) => {
+    const {colorMode, toggleColorMode} = useColorMode();
+    return(
+    <div>
+      <h1>
+        <GatsbyLink to="/">
+            <Text color={'gray.800'}>{siteTitle}</Text>
+        </GatsbyLink>
       </h1>
+          {/*<Button onClick={toggleColorMode}>*/}
+          {/*    Toggle {colorMode === 'Light' ? 'Dark' : 'Light'}*/}
+          {/*</Button>*/}
     </div>
-  </header>
-)
+)};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

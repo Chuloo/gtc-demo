@@ -5759,10 +5759,10 @@ gatsby-telemetry@^1.1.56:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-gatsby-transformer-cloudinary@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-cloudinary/-/gatsby-transformer-cloudinary-0.3.1.tgz#f641e18994eb1afcaa0aa1d6d74fbd7e58617b76"
-  integrity sha512-b1NKFCGcK93S5lZvITBicYPxmX2LgAIOFbpuZrixmITDr3btwDHFFqZvKad5vsHBgnR05Ve62vLi7UX7/RTraQ==
+gatsby-transformer-cloudinary@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-cloudinary/-/gatsby-transformer-cloudinary-0.3.4.tgz#d857a4b97adcedfd6d679241f3c3ee0f2ea701e6"
+  integrity sha512-Zpa2glZtw4bZlmi+n7IyqGd1yN54x1ET8tSl99+ZsaE8HPEgcMiX6whunIWO8MdhAHMyzZeSJASQi2zNbeVjIA==
   dependencies:
     axios "^0.19.0"
     cloudinary "^1.15.0"
