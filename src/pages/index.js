@@ -3,8 +3,7 @@ import {useStaticQuery, graphql, Link} from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
-import { SimpleGrid, Box, Button, Heading } from "@chakra-ui/core";
-import {Text} from "@chakra-ui/core/dist";
+import { SimpleGrid, Box, Button, Heading, Text } from "@chakra-ui/core/dist";
 
 const IndexPage = () => {
     // fetch images
@@ -13,7 +12,7 @@ const IndexPage = () => {
       listImages: allCloudinaryAsset(limit: 9) {
         images: edges {
           node {
-            fixed(width: 300) {
+            fixed(width: 250) {
               ...CloudinaryAssetFixed
             }
           }
@@ -21,7 +20,7 @@ const IndexPage = () => {
       }
       bannerImage: file(name: { eq: "7" }) {
         cloudinary: childCloudinaryAsset {
-          fluid(transformations:["e_grayscale"] maxWidth: 1500) {
+          fluid(transformations:["e_grayscale"] maxWidth: 1800) {
             ...CloudinaryAssetFluid
           }
         }
@@ -35,8 +34,8 @@ const IndexPage = () => {
     return (
         <Layout>
             <SEO title="Home" />
-            <Box className={'banner'} style={{marginBottom: "100px"}}>
-                <Heading as={'h1'} size={'xl'} m={3} style={{textAlign: "center"}}>Responsive Banner Image</Heading>
+            <Box mb={[10, 20, 100]}>
+                <Heading size={'xl'} m={3} textAlign={"center"}>Responsive Banner Image</Heading>
                 <Box>
                     <Image fluid={bannerImage}/>
                 </Box>
@@ -47,10 +46,10 @@ const IndexPage = () => {
             </Button>
 
             <Box mx={'auto'} my={20}>
-                <Heading style={{textAlign: "center", fontSize: "1.5em"}}>Optimized Gallery Images</Heading>
+                <Heading textAlign={"center"} size={"xl"} mb={5}>Optimized Gallery Images</Heading>
                 <SimpleGrid columns={[1, 2, 3]} spacing={1}>
                     {galleryImages.map((val, index) => (
-                        <Box p={5} m={2} shadow="md" borderWidth="1px" rounded={'lg'} d="flex" alignItems="center">
+                        <Box p={5} m={2} mx={"auto"} shadow="md" borderWidth="1px" rounded={'lg'} d="flex" alignItems="center">
                             <Image fixed={val.node.fixed} key={index}/>
                         </Box>
                     ))}
