@@ -33,11 +33,11 @@ const IndexPage = () => {
             <Text my={5}>Click any of the buttons below to see the gallery or single Image with the <i>getFluidImageObject</i> API</Text>
 
             <Box>
-                <Button variantColor={'teal'} mr={10}>
+                <Button variantColor={'teal'} mr={10} mb={[2, 0, 0]}>
                     <Link to="/gallery"> Gallery Images</Link>
                 </Button>
 
-                <Button variantColor={'green'}>
+                <Button variantColor={'green'} mb={[2, 0, 0]}>
                     <Link to="/single">API Image</Link>
                 </Button>
             </Box>
