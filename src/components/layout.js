@@ -21,7 +21,7 @@ const Layout = ({children}) => {
             <Header siteTitle={data.site.siteMetadata.title}/>
             <Box width={['90%', '90%', '80%']} mx={'auto'}>
                 <main>{children}</main>
-                <Text>For this demo, the amazing images here by great artists were all sourced from Unsplash</Text>
+                <Text mt={10}>For this demo, the amazing images here by great artists were all sourced from Unsplash</Text>
             </Box>
         </Box>
     )

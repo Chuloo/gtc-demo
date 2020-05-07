@@ -9,15 +9,6 @@ const IndexPage = () => {
     // fetch images
     const data = useStaticQuery(graphql`
     query BannerImage {
-      listImages: allCloudinaryAsset(limit: 9) {
-        images: edges {
-          node {
-            fluid {
-              ...CloudinaryAssetFluid
-            }
-          }
-        }
-      }
       bannerImage: file(name: { eq: "7" }) {
         cloudinary: childCloudinaryAsset {
           fluid(transformations:["e_grayscale"] maxWidth: 1500) {
@@ -29,7 +20,6 @@ const IndexPage = () => {
 `);
 
     const bannerImage = data.bannerImage.cloudinary.fluid;
-    const galleryImages = data.listImages.images;
 
     return (
         <Layout>
@@ -40,22 +30,14 @@ const IndexPage = () => {
                     <Image fluid={bannerImage}/>
                 </Box>
             </Box>
-            <Text my={5}>Click the button below to navigate to the second page with a single sourced image from
-                Cloudinary</Text>
-            <Button variantColor={'teal'}>
-                <Link to="/single"> Second Page</Link>
+            <Text my={5}>Click any of the buttons below to see the gallery or single Image with the <i>getFluidImageObject</i> API</Text>
+            <Button variantColor={'teal'} mr={10}>
+                <Link to="/gallery"> Gallery Images</Link>
             </Button>
 
-            <Box mx={'auto'} my={20}>
-                <Heading textAlign={"center"} size={"xl"} mb={5}>Optimized Gallery Images</Heading>
-                <SimpleGrid columns={[1, 2, 3]} spacing={2}>
-                    {galleryImages.map((val, index) => (
-                        <Box key={index} p={3} m={2} my={"auto"} shadow="md" borderWidth="1px" rounded={'lg'}>
-                            <Image fluid={val.node.fluid}/>
-                        </Box>
-                    ))}
-                </SimpleGrid>
-            </Box>
+            <Button variantColor={'green'}>
+                <Link to="/single">Fluid API Image</Link>
+            </Button>
         </Layout>
     )
 };

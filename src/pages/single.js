@@ -3,7 +3,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {getFluidImageObject} from "gatsby-transformer-cloudinary"
 import Image from "gatsby-image"
-import {Box, Heading, Text} from "@chakra-ui/core/dist";
+import {Box, Button, Heading, Text} from "@chakra-ui/core/dist";
+import {Link} from "gatsby";
 
 
 const SinglePage = () => {
