@@ -1,10 +1,11 @@
 import {Link as GatsbyLink} from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import {Box, Flex, Heading} from "@chakra-ui/core/dist";
+import {Box, Flex, Heading, Button} from "@chakra-ui/core/dist";
+import {useColorMode} from "@chakra-ui/core";
 
 const Header = ({siteTitle}) => {
-    // const {colorMode, toggleColorMode} = useColorMode();
+    const {colorMode, toggleColorMode} = useColorMode();
     return (
         <Flex
             as="nav"
@@ -22,9 +23,9 @@ const Header = ({siteTitle}) => {
                     </GatsbyLink>
                 </Heading>
             </Flex>
-            {/*<Button onClick={toggleColorMode}>*/}
-            {/*    Toggle {colorMode === 'Light' ? 'Dark' : 'Light'}*/}
-            {/*</Button>*/}
+            <Button onClick={toggleColorMode} color={colorMode === "light" ? "black" : "white"}>
+                {colorMode === 'light' ? 'Dark' : 'Light'} Mode
+            </Button>
         </Flex>
     )
 };
