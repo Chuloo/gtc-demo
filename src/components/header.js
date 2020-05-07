@@ -23,7 +23,7 @@ const Header = ({siteTitle}) => {
                     </GatsbyLink>
                 </Heading>
             </Flex>
-            <Button onClick={toggleColorMode} color={colorMode === "light" ? "black" : "white"}>
+            <Button size={"sm"} onClick={toggleColorMode} color={colorMode === "light" ? "black" : "white"}>
                 {colorMode === 'light' ? 'Dark' : 'Light'} Mode
             </Button>
         </Flex>
