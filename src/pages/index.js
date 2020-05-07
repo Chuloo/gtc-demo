@@ -1,9 +1,9 @@
 import React from "react"
-import {useStaticQuery, graphql, Link} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
-import { SimpleGrid, Box, Button, Heading, Text } from "@chakra-ui/core/dist";
+import {Box, Button, Heading, SimpleGrid, Text} from "@chakra-ui/core/dist";
 
 const IndexPage = () => {
     // fetch images
@@ -12,15 +12,15 @@ const IndexPage = () => {
       listImages: allCloudinaryAsset(limit: 9) {
         images: edges {
           node {
-            fixed(width: 250) {
-              ...CloudinaryAssetFixed
+            fluid {
+              ...CloudinaryAssetFluid
             }
           }
         }
       }
       bannerImage: file(name: { eq: "7" }) {
         cloudinary: childCloudinaryAsset {
-          fluid(transformations:["e_grayscale"] maxWidth: 1800) {
+          fluid(transformations:["e_grayscale"] maxWidth: 2000) {
             ...CloudinaryAssetFluid
           }
         }
@@ -30,27 +30,30 @@ const IndexPage = () => {
 
     const bannerImage = data.bannerImage.cloudinary.fluid;
     const galleryImages = data.listImages.images;
+    console.log(galleryImages)
+    console.log(bannerImage)
 
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="Home"/>
             <Box mb={[10, 20, 100]}>
                 <Heading size={'xl'} m={3} textAlign={"center"}>Responsive Banner Image</Heading>
                 <Box>
                     <Image fluid={bannerImage}/>
                 </Box>
             </Box>
-            <Text my={5}>Click the button below to navigate to the second page with a single sourced image from Cloudinary</Text>
+            <Text my={5}>Click the button below to navigate to the second page with a single sourced image from
+                Cloudinary</Text>
             <Button variantColor={'teal'}>
-                <Link  to="/single"> Second Page</Link>
+                <Link to="/single"> Second Page</Link>
             </Button>
 
             <Box mx={'auto'} my={20}>
                 <Heading textAlign={"center"} size={"xl"} mb={5}>Optimized Gallery Images</Heading>
-                <SimpleGrid columns={[1, 2, 3]} spacing={1}>
+                <SimpleGrid columns={[1, 2, 3]} spacing={2}>
                     {galleryImages.map((val, index) => (
-                        <Box p={5} m={2} mx={"auto"} shadow="md" borderWidth="1px" rounded={'lg'} d="flex" alignItems="center">
-                            <Image fixed={val.node.fixed} key={index}/>
+                        <Box key={index} p={3} m={2} my={"auto"} shadow="md" borderWidth="1px" rounded={'lg'}>
+                            <Image fluid={val.node.fluid}/>
                         </Box>
                     ))}
                 </SimpleGrid>
