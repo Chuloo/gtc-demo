@@ -20,7 +20,7 @@ const IndexPage = () => {
       }
       bannerImage: file(name: { eq: "7" }) {
         cloudinary: childCloudinaryAsset {
-          fluid(transformations:["e_grayscale"] maxWidth: 2000) {
+          fluid(transformations:["e_grayscale"] maxWidth: 1500) {
             ...CloudinaryAssetFluid
           }
         }
@@ -30,8 +30,6 @@ const IndexPage = () => {
 
     const bannerImage = data.bannerImage.cloudinary.fluid;
     const galleryImages = data.listImages.images;
-    console.log(galleryImages)
-    console.log(bannerImage)
 
     return (
         <Layout>
@@ -57,7 +55,6 @@ const IndexPage = () => {
                         </Box>
                     ))}
                 </SimpleGrid>
-
             </Box>
         </Layout>
     )

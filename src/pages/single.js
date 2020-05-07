@@ -16,13 +16,12 @@ const SinglePage = () => {
                 cloudName: 'chuloo',
                 originalHeight: 400,
                 originalWidth: 500,
-                // transformations: [],
+                transformations: ["e_replace_color:purple", "a_hflip"],
             });
             setFluid(res);
         }
 
         getData();
-
 
     }, []);
     return (
