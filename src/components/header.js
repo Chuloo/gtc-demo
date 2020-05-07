@@ -12,24 +12,25 @@ const Header = ({siteTitle}) => {
             align="center"
             justify="space-between"
             wrap="wrap"
-            padding="1.5rem"
+            px={["0.5em", "0.5em", "1.5em"]}
+            py={["1em", "1em", "1.5em"]}
             bg="blue.900"
             color="white"
         >
             <Flex align="flex-start">
-                <Heading as="h1" size="lg">
+                <Heading as="h1">
                     <GatsbyLink to="/">
                         <Box color={'white.800'}>
-                            <Text fontSize={"md"}>{siteTitle}</Text>
+                            <Text fontSize={["md", "md", "lg"]}>{siteTitle}</Text>
                         </Box>
                     </GatsbyLink>
                 </Heading>
             </Flex>
             <Flex align="flex-end">
-                <Button variantColor={'blue'} mr={2} size={"sm"}>
-                    <GatsbyLink to="/"> Home 🏠</GatsbyLink>
+                <Button variantColor={'blue'} mr={2} size={"xs"}>
+                    <GatsbyLink to="/">Home</GatsbyLink>
                 </Button>
-                <Button size={"sm"} onClick={toggleColorMode} color={colorMode === "light" ? "black" : "white"}>
+                <Button size={"xs"} onClick={toggleColorMode} color={colorMode === "light" ? "black" : "white"}>
                     {colorMode === 'light' ? 'Dark Mode 🌑' : 'Light Mode ☀️'}
                 </Button>
             </Flex>
