@@ -1,11 +1,10 @@
 import {Link as GatsbyLink} from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import {useColorMode} from "@chakra-ui/core"
-import {Box, Flex, Heading, Button} from "@chakra-ui/core/dist";
+import {Box, Flex, Heading} from "@chakra-ui/core/dist";
 
 const Header = ({siteTitle}) => {
-    const {colorMode, toggleColorMode} = useColorMode();
+    // const {colorMode, toggleColorMode} = useColorMode();
     return (
         <Flex
             as="nav"
@@ -17,7 +16,7 @@ const Header = ({siteTitle}) => {
             color="white"
         >
             <Flex align="center" mr={5}>
-                <Heading as="h1" size="lg" >
+                <Heading as="h1" size="lg">
                     <GatsbyLink to="/">
                         <Box color={'white.800'}>{siteTitle}</Box>
                     </GatsbyLink>

@@ -30,7 +30,7 @@ const SinglePage = () => {
             <SEO title={"single"}/>
             <Box>
                 <Heading as={'h1'} size={'lg'} m={5} textAlign={'center'}>Single Fluid Image</Heading>
-                <Box maxWidth={[350,400,500]} mx={"auto"} shadow="md" borderWidth="1px" rounded={'lg'} p={3}>
+                <Box maxWidth={[350, 400, 500]} mx={"auto"} shadow="md" borderWidth="1px" rounded={'lg'} p={3}>
                     {fluid ? <Image fluid={fluid}/> : "loading..."}
                 </Box>
                 <Box my={30}>

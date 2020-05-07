@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import {graphql, useStaticQuery} from "gatsby"
 import Header from "./header"
-import "./layout.css"
 import {Box, Text} from "@chakra-ui/core/dist";
 
 const Layout = ({children}) => {
@@ -26,10 +25,10 @@ const Layout = ({children}) => {
             </Box>
         </Box>
     )
-}
+};
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
-}
+};
 
 export default Layout
