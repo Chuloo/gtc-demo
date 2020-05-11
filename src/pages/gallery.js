@@ -2,8 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
-import {Box, Button, Heading, SimpleGrid} from "@chakra-ui/core/dist";
-import {graphql, Link, useStaticQuery} from "gatsby";
+import {Box, Heading, SimpleGrid} from "@chakra-ui/core/dist";
+import {graphql, useStaticQuery} from "gatsby";
 
 
 const SinglePage = () => {

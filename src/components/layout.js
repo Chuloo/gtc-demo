@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import {graphql, useStaticQuery} from "gatsby"
 import Header from "./header"
-import {Box, Text} from "@chakra-ui/core/dist";
+import {Box, Text, Link} from "@chakra-ui/core/dist";
 
 const Layout = ({children}) => {
 
@@ -21,7 +21,7 @@ const Layout = ({children}) => {
             <Header siteTitle={data.site.siteMetadata.title}/>
             <Box width={['90%', '90%', '80%']} mx={'auto'}>
                 <main>{children}</main>
-                <Text mt={10}>For this demo, the amazing images here by great artists were all sourced from Unsplash</Text>
+                <Text mt={10}>For this demo, the amazing images here by great artists were all sourced from <Link href={"https://unsplash.com/"} target={"_blank"} color="teal.500">Unsplash</Link></Text>
             </Box>
         </Box>
     )

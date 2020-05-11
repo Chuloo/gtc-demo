@@ -3,7 +3,7 @@ import {graphql, Link, useStaticQuery} from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
-import {Box, Button, Heading, SimpleGrid, Text} from "@chakra-ui/core/dist";
+import {Box, Button, Heading, Text} from "@chakra-ui/core/dist";
 
 const IndexPage = () => {
     // fetch images
@@ -30,13 +30,15 @@ const IndexPage = () => {
                     <Image fluid={bannerImage}/>
                 </Box>
             </Box>
-            <Text my={5}>Click any of the buttons below to see the gallery or single Image with the <i>getFluidImageObject</i> API</Text>
+            <Text my={5}>Click any of the buttons below to see the gallery or single Image with
+                the <i>getFluidImageObject</i> API</Text>
 
             <Box>
                 <Button variantColor={'teal'} mr={10} mb={[2, 0, 0]}>
                     <Link to="/gallery"> Gallery Images</Link>
                 </Button>
 
+                {/*Button to single page with getFluidImageAPI*/}
                 <Button variantColor={'green'} mb={[2, 0, 0]}>
                     <Link to="/single">API Image</Link>
                 </Button>
