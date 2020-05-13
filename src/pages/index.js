@@ -37,11 +37,6 @@ const IndexPage = () => {
                 <Button variantColor={'teal'} mr={10} mb={[2, 0, 0]}>
                     <Link to="/gallery"> Gallery Images</Link>
                 </Button>
-
-                {/*Button to single page with getFluidImageAPI*/}
-                <Button variantColor={'green'} mb={[2, 0, 0]}>
-                    <Link to="/single">API Image</Link>
-                </Button>
             </Box>
         </Layout>
     )
